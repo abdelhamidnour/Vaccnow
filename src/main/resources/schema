@@ -1,0 +1,48 @@
+CREATE TABLE `user` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `email` varchar(255)
+);
+
+CREATE TABLE `branch` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `address` varchar(255)
+);
+
+CREATE TABLE `vaccines` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255)
+);
+
+CREATE TABLE `branch_vaccines` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `branch_id` int,
+  `vaccines_id` int
+);
+
+CREATE TABLE `ticket` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int,
+  `branch_vaccines_id` int,
+  `time_slot_id` int,
+  `confirmed` boolean
+);
+
+CREATE TABLE `time_slot` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `branch_vaccines_id` int,
+  `start_time` date,
+  `date_time` date
+);
+
+ALTER TABLE `branch_vaccines` ADD FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`);
+
+ALTER TABLE `branch_vaccines` ADD FOREIGN KEY (`vaccines_id`) REFERENCES `vaccines` (`id`);
+
+ALTER TABLE `ticket` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+ALTER TABLE `ticket` ADD FOREIGN KEY (`branch_vaccines_id`) REFERENCES `branch_vaccines` (`id`);
+
+ALTER TABLE `time_slot` ADD FOREIGN KEY (`id`) REFERENCES `ticket` (`time_slot_id`);
+
+ALTER TABLE `time_slot` ADD FOREIGN KEY (`branch_vaccines_id`) REFERENCES `branch_vaccines` (`id`);
