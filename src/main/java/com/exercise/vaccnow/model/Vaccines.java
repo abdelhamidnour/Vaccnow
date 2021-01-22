@@ -13,13 +13,13 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "VACCINES", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "VACCINES")
 public class Vaccines {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    @ManyToMany(mappedBy = "vaccines", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-    private Set<Branch> branches = new HashSet<>();
+//    @ManyToMany(mappedBy = "vaccines", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+//    private Set<Branch> branches = new HashSet<>();
 
 }

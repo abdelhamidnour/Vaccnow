@@ -14,17 +14,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TICKET", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "TICKET")
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @OneToOne
     @JoinColumn(name = "BRANCH_VACCINES_ID", referencedColumnName = "id")
-    private Integer branchVaccinesId;
+    private BranchVaccines branchVaccines;
     @OneToOne
     @JoinColumn(name = "TIME_SLOT_Id", referencedColumnName = "id")
-    private Integer timeSlotId;
+    private TimeSlot timeSlot;
     private Boolean confirmed;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")

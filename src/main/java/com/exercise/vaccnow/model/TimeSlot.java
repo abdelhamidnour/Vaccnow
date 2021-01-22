@@ -13,14 +13,11 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TIME_SLOT", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "TIME_SLOT")
 public class TimeSlot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @OneToOne
-    @JoinColumn(name = "TICKET_ID", referencedColumnName = "id")
-    private Integer ticketId;
     private Date startTime;
     private Date dateTime;
 }

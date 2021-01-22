@@ -11,16 +11,14 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BRANCH_VACCINES", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "BRANCH_VACCINES")
 public class BranchVaccines {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private List<Integer> branches;
-    private List<Integer>  vaccinesId;
-
     @OneToOne
-    @JoinColumn(name = "TICKET", referencedColumnName = "id")
-    private Integer ticket;
+    private Branch branch;
+    @OneToOne
+    private Vaccines vaccines;
 
 }

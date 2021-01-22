@@ -12,19 +12,19 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BRANCH", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "BRANCH")
 public class Branch {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String address;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    @JoinTable(
-            name = "BRANCH_VACCINES",
-            joinColumns = {@JoinColumn(name = "branch_id")},
-            inverseJoinColumns = {@JoinColumn(name = "vaccine_id")}
-    )
-    private Set<Vaccines> vaccines = new HashSet<>();
+//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+//    @JoinTable(
+//            name = "BRANCH_VACCINES",
+//            joinColumns = {@JoinColumn(name = "branch_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "vaccine_id")}
+//    )
+//    private Set<Vaccines> vaccines = new HashSet<>();
 
 
 }

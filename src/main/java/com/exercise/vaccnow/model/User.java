@@ -12,13 +12,11 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "USER", schema = "PUBLIC", catalog = "DEFAULT")
+@Table(name = "USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String email;
-    @OneToMany(mappedBy="ticket")
-    private Set<Ticket> tickets;
 }
