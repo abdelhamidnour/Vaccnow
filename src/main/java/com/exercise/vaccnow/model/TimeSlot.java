@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Time;
 
 @Setter
 @Getter
@@ -18,6 +19,6 @@ public class TimeSlot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private Date startTime;
+    private Time startTime;
     private Date dateTime;
 }
