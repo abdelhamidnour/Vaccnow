@@ -4,7 +4,6 @@ import com.exercise.vaccnow.dto.PaymentDto;
 import com.exercise.vaccnow.dto.VaccinationReservationDto;
 import com.exercise.vaccnow.dto.VaccinationReservationResponse;
 import com.exercise.vaccnow.service.VaccinationService;
-import javafx.application.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
