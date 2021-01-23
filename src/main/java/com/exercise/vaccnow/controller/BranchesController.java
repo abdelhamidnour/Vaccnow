@@ -31,8 +31,8 @@ public class BranchesController {
     public ResponseEntity<Boolean> getSpecificVaccPerBranch(@Valid @PathVariable String branchId,@Valid @PathVariable String vaccId){
         return ResponseEntity.ok(branchService.getSpecificVaccPerBranch(branchId,vaccId));
     }
-    @GetMapping("/getAvialblePerBranch/{branchId}/")
-    public ResponseEntity<TimeSlotDto> getAvailableTimePerBranch(@PathVariable String branchId){
+    @GetMapping("/getNotAvialblePerBranch/{branchId}")
+    public ResponseEntity<List<TimeSlotDto>> getAvailableTimePerBranch(@PathVariable int branchId){
         return ResponseEntity.ok(branchService.getAvailableTimePerBranch(branchId));
     }
 }

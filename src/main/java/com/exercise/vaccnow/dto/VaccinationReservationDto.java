@@ -5,18 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 @Setter
 @Getter
 public class VaccinationReservationDto {
     private int branchId;
     private int vaccId;
-    @JsonFormat
-            (shape = JsonFormat.Shape.STRING, pattern = "hh:mm")
-    private Time startTime;
-    @JsonFormat
-            (shape = JsonFormat.Shape.STRING, pattern = "yyyy:MM:DD")
-    private Date day;
+    private String day;
     private String name;
     private String email;
 }
